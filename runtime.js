@@ -47,16 +47,56 @@ const extraLargeArray = getSizedArray(100000);
 
 // Try it with first function
 perf.start();                     // Starts timer
+doublerAppend(tinyArray);
+let resultsAppendT = perf.stop();  // Stops timer and save time results
+
+perf.start();                     // Starts timer
+doublerAppend(smallArray);
+let resultsAppendS = perf.stop();  // Stops timer and save time results
+
+perf.start();                     // Starts timer
+doublerAppend(mediumArray);
+let resultsAppendM = perf.stop();  // Stops timer and save time results
+
+perf.start();                     // Starts timer
+doublerAppend(largeArray);
+let resultsAppendL = perf.stop();  // Stops timer and save time results
+
+perf.start();                     // Starts timer
 doublerAppend(extraLargeArray);
 let resultsAppend = perf.stop();  // Stops timer and save time results
 
-
 // Try it with second function
+perf.start();
+doublerInsert(tinyArray);
+let resultsInsertT = perf.stop();
+
+perf.start();
+doublerInsert(smallArray);
+let resultsInsertS = perf.stop();
+
+perf.start();
+doublerInsert(mediumArray);
+let resultsInsertM = perf.stop();
+
+perf.start();
+doublerInsert(largeArray);
+let resultsInsertL = perf.stop();
+
 perf.start();
 doublerInsert(extraLargeArray);
 let resultsInsert = perf.stop();
 
 
-console.log('Results for the extraLargeArray');
-console.log("insert", resultsInsert.preciseWords);
-console.log("append", resultsAppend.preciseWords);
+//console.log('Results for the extraLargeArray');
+console.log("insert T", resultsInsertT.preciseWords);
+console.log("insert S", resultsInsertS.preciseWords);
+console.log("insert M", resultsInsertM.preciseWords);
+console.log("insert L", resultsInsertL.preciseWords);
+console.log("insert XL", resultsInsert.preciseWords);
+
+console.log("append T", resultsAppendT.preciseWords);
+console.log("append S", resultsAppendS.preciseWords);
+console.log("append M", resultsAppendM.preciseWords);
+console.log("append L", resultsAppendL.preciseWords);
+console.log("append XL", resultsAppend.preciseWords);

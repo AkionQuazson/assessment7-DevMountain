@@ -1,0 +1,19 @@
+insert 1.0138769 s
+append 3.5859 ms
+
+insert T 112.6 μs
+insert S 23.1 μs
+insert M 191.8 μs
+insert L 10.4458 ms
+insert XL 1.0037841 s
+
+append T 117.5 μs
+append S 17.5 μs
+append M 61.4 μs
+append L 546.3 μs
+append XL 4.4085 ms
+
+-- At lengths of 1000 and less, there seems to be little difference between 
+the two functions. After that point, insert multiplied by 1000s while append
+only multiplied by factors of 10 or less.
+-- Due to the lesser time taken, the append function has a better runtime.
